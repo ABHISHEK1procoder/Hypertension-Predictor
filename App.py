@@ -9,10 +9,10 @@ def load_pickle(filename):
         st.error(f"File '{filename}' not found in the app directory.")
         st.stop()
     with open(filename, 'rb') as file:
-        return pickle.load(file)
+        return cloudpickle.load(file)
 
-model = load_pickle('hypertension_model.pkl')
-scalar = load_pickle('Scalar.pkl')
+model = load_pickle('hypertension_model_new.pkl')
+scalar = load_pickle('Scalar_new.pkl')
 
 st.title("Hypertension Prediction App")
 
@@ -85,4 +85,5 @@ if st.button("Predict"):
             st.success("✅ The person is unlikely to have Hypertension.")
     except Exception as e:
         st.error(f"Prediction failed: {e}")
+
         
