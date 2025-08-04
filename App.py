@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import pickle
+import cloudpickle
 import pandas as pd
 import os
 
@@ -87,3 +87,4 @@ if st.button("Predict"):
         st.error(f"Prediction failed: {e}")
 
         
+
